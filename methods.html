@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vue.js"></script>
+    <title>Methods com Vue JS</title>
+</head>
+<body>
+    <div id="app">
+        {{ somar() }}<br>
+        {{ subtrair() }}<br>
+        {{ multiplicar() }}<br>
+        {{ dividir() }}<br>
+        {{ numeroaleatorio() }}<br>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+                somar: function somar() { // function convencional
+                    return 4 + 2;
+                },
+                subtrair: function() { // function anônimo
+                    return 4 - 2;
+                },
+                multiplicar: () => { // arrow function
+                    return 4 * 4;
+                },
+                dividir() { // forma enxuta de definir os pares de chave/valor
+                    return 4 / 2;
+                },
+                numeroaleatorio: function numeroaleatorio() {
+                    return Math.random();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
