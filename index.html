@@ -9,7 +9,20 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{ mensagem }}</h1>
+        <h1>{{ mensagem }}</h1><br>
+        <h4>Curiosidades do autor</h4>
+        <ul>
+            <li>Valor total: {{ valores }}</li>
+            <li>Logado: {{ logado }}</li>
+            <li>Hobbies: {{ hobbies[0] }}, {{ hobbies[1] }}, {{ hobbies[2] }}</li>
+            <h4>Dados do autor</h4>
+            <ul>
+                <li>Nome: {{ perfil.nome }}</li>
+                <li>Idade: {{ perfil.idade }}</li>
+                <li>Cursos: {{ perfil.cursos[0].nome }}</li>
+                <li>Carga Horaria: {{ perfil.cursos[0].cargaHoraria }}</li>
+            </ul>
+        </ul>
     </div>
 
     <script>
@@ -31,7 +44,30 @@
             // el: '.app' // para selecionar um elemento pela classe
             el: '#app', // para selecionar um elemento pelo id
             data: {
-                mensagem: 'Primeiro template controlado pelo Vue'
+                mensagem: 'Primeiro template controlado pelo Vue', //string
+                valores: 150.40, //número
+                logado: false, // booleano
+                hobbies: [
+                    'sinuca',
+                    'jogar futebol',
+                    'carros'
+                ], // array de elementos
+                perfil: {
+                    nome: 'Lucas Rodrigues',
+                    site: 'contato@lrcdev.com.br',
+                    idade: 22,
+                    cursos: [
+                        { 
+                            nome: 'Vue JS', 
+                            cargaHoraria: '50 horas' 
+                        },
+                        { 
+                            nome: 'Banco de Dados Relacionais', 
+                            carga: '40 horas' 
+                        }
+                    ] // array de objetos
+                }
+
             } 
         }); //vm = ViewModel
 
