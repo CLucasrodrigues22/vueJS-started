@@ -20,20 +20,24 @@
         const vm = new Vue({
             el: '#app',
             data: {
-
+                n1: 10,
+                n2: 5,
+                
             },
             methods: {
                 somar: function somar() { // function convencional
-                    return 4 + 2;
+                    return this.n1 + this.n2;
                 },
                 subtrair: function() { // function anônimo
-                    return 4 - 2;
+                    return this.n1 - this.n2;
                 },
                 multiplicar: () => { // arrow function
-                    return 4 * 4;
+                    // return this.n1 * this.n2; // contexto léxico
+
+                    return 5 * 3;
                 },
                 dividir() { // forma enxuta de definir os pares de chave/valor
-                    return 4 / 2;
+                    return this.n1 / this.n2;
                 },
                 numeroaleatorio: function numeroaleatorio() {
                     return Math.random();
